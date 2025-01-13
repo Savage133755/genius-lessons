@@ -34,8 +34,11 @@
 :root {
     --color-praimary-dark: #31261A ;
     --color-praimary-light: #faf4ea ;
-    --colorbrand-light: #819b57 ;
+    --color-secondary-dark: #a18268 ;
+    --colorbrand-default: #819b57 ;
     --colorbrand-dark: #465929 ;
+    --colorbrand-light: #cfcfbc ;
+
 }
 /*base*/
 h1,
@@ -53,6 +56,7 @@ body
 {
     color: var(--color-praimary-dark);
     font-family: 'Poppins', sans-serif;
+    background-color: var(--color-praimary-light);
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
@@ -82,8 +86,8 @@ ul {
 {
     padding: 16px 32px;
     color: var(--color-praimary-light);
-    background-color: var(--colorbrand-light) ;
-    border: 2px solid var(--colorbrand-light) ;
+    background-color: var(--colorbrand-default) ;
+    border: 2px solid var(--colorbrand-default) ;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
@@ -105,7 +109,7 @@ ul {
 }
 .link:hover 
 {
-    color: var(--colorbrand-light);
+    color: var(--colorbrand-default);
 }
 .container {
     width: 100%;
@@ -132,7 +136,7 @@ ul {
 /*hero-section*/
 .hero-section{
     padding: 272px 0;
-    background-image: url(/images/humans-in-baker.jpg);
+    background-image: url(/images/herosection-background.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -148,12 +152,12 @@ ul {
 }
 .hero-title .accent 
 {
-    color: var(--colorbrand-light);
+    color: var(--colorbrand-default);
 }
 /*advantages section*/
 .advantages-section {
     padding: 16px 0;
-    background-color: var(--colorbrand-light);
+    background-color: var(--colorbrand-default);
 }
 .advantages-list 
 {
@@ -173,6 +177,9 @@ font-weight: 300;
     font-size: 64px;
     font-weight: 900;
     line-height: 1.3;
+}
+.section-title.centered {
+  text-align: center;
 }
 .section-title .accent 
 {
@@ -195,7 +202,7 @@ font-weight: 300;
 }
 
 .trad-text .brand {
-   color: var(--colorbrand-light);
+   color: var(--colorbrand-default);
    font-weight: 600;
 }
 .trad-text .uppercase {
@@ -206,7 +213,18 @@ font-weight: 300;
 }
 /*Chefs*/
 .chefs-title{
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
+    max-width: 540px;
+}
+.chefs-title::before,.chefs-title::after {
+    display: block;
+    border: 2px solid #cfcfbc;
+    width: 352px; 
+    content: '';
+}
+.chef-photo{
+    border-radius: 4px 4px 4px 200px;
+    box-shadow: -16px 16px 0 0 var(--color-praimary-light), -16px 16px 0 2px var(--color-secondary-dark)
 }
 .chef-title 
 {
@@ -215,10 +233,6 @@ font-weight: 300;
     font-weight: 600;
 }
 /*Formats*/
-.formats-title.section-title {
-    text-align: center;
-}
-
 .formats-list {
     display: flex;
     flex-wrap: wrap;
@@ -228,6 +242,11 @@ font-weight: 300;
     flex-basis: calc((100% - 40px) / 3);
 }
 .format-card {
+    height: 444px;
+    background-image: linear-gradient(180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    var(--color-praimary-dark) 100%);
     border: 1px solid gold;
     padding: 24px;
     border-radius: 16px;
@@ -252,6 +271,13 @@ font-weight: 300;
     margin-bottom: 16px;
 }
 /* footer*/
+footer {
+    background-image: url(/images/footer-background.png);
+    background-color: var(--color-praimary-dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .address-link {
     color: var(--color-praimary-light);
     font-size: 16px;
@@ -259,7 +285,7 @@ font-weight: 300;
     text-decoration: none;
 }
 .address-link:hover {
-    color: var(--colorbrand-light);
+    color: var(--colorbrand-default);
     
 }
 .address-copyright{
